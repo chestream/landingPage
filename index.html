@@ -52,8 +52,9 @@
       </head>
   <body>
 	  
+
 	  <!-- NAVBAR
-	      ================================================== -->
+	      ================================================== 
 	  <nav class="navbar navbar-default" role="navigation">
 	  	  <div class="container">
 			  <div class="navbar-header">
@@ -64,7 +65,7 @@
 			      <span class="icon-bar"></span>
 			    </button>
 			    
-			    <!--Replace text with your app name or logo image-->
+			    
 			    <a class="navbar-brand" href="#">Chestream.com</a>
 			    
 			  </div>
@@ -78,6 +79,7 @@
 			  </div>
 		  </div>
 	  </nav>
+	-->
 	  
 	  
 	   <!-- HEADER
@@ -86,8 +88,9 @@
 		 <div class="container">
 			 <div class="row">
 				 <div class="col-md-12">
-					  <h1 style="color:black;font-weight:bold">⍟ Chestream ⍟</h1>
-					  <p class="lead" style="color:black">Beautiful, collaborative video consumption platform.</p>
+				 	  <img width="70px" src="img/logo.png">
+					  <h1 class="sexyText">⍟ Chestream ⍟</h1>
+					  <p class="lead stroke" style="color:black">Beautiful, collaborative video consumption platform.</p>
 					  
 					  <div class="carousel-iphone">
 					  	<div id="carousel-example-generic" class="carousel slide">
@@ -126,6 +129,7 @@
 		  <div class="container">
 			  <div class="row">
 				  <div class="col-md-offset-2 col-md-8">
+				  	<br><br>
 					<h1>Come, be part of a revolution.</h1>
 					<p class="lead">Download from Play Store today!! (Coming soon for iOS)</p>
 					<a href="http://play.google.com/store/apps/details?id=com.chestream" target="_blank">
@@ -314,6 +318,7 @@
 	  	<div class="container">
 	  		<div class="row">
 	  			<div class="col-md-12">
+	  				<img width="70px" src="img/logo.png">
 	  				<h1>Avaialable now on the Play Store</h1>
 	  				<p class="lead">Download Today!!</p>
 	  				<a href="http://play.google.com/store/apps/details?id=com.chestream" target="_blank">
@@ -345,5 +350,13 @@
     <script src="js/animatescroll.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/retina.min.js"></script>
-  	
+
+  	<script type="text/javascript">
+  		windowWidth = window.innerWidth;
+
+  		if (screen.width <= 480 || windowWidth <= 480) {
+  	    	window.location = "http://play.google.com/store/apps/details?id=com.chestream";
+  		}
+  	</script>
+
 </html>
