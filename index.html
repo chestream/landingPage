@@ -133,7 +133,7 @@
 	  				    	    <div class="screen">
 	  				    	        <!-- Content goes here -->
 	  				    	        <p class="mobile_header">Chestream</p>
-	  				    	        <video id="video" src="video.webm" autoplay>
+	  				    	        <video id="video" src="video.webm" autoplay loop>
 	  				  			</video>
 	  				  			<div class="mobile_body">
 	  				  				<img id="story_img">
@@ -342,6 +342,7 @@
 	  			  	<h2>Connect with us</h2>
 	  			   	<a class="icon-facebook" target="_blank" href="http://fb.com/chestreamapp"></a>
 	  			   	<a class="icon-twitter" target="_blank" href="http://twitter.com/chestreamapp"></a>
+	  			   	<a class="icon-youtube" target="_blank" href="https://www.youtube.com/channel/UCjEPO9dYmBzKGKIBm1LG0SQ/videos"></a>
 	  			   	<a class="icon-rss" target="_blank" href="https://medium.com/@chestreamapp"></a>
 	  			   </div>
 	  		  </div>
@@ -366,7 +367,6 @@
 	  				<hr />
 		  			<ul>
 	                	<li><a href="mailto:stomatrix@gmail.com?Subject=Hello Chestream!!">Contact</a></li>
-	                	<li><a href="http://twitter.com/chestreamapp">Twitter</a></li>
 	                	<li><a href="https://medium.com/@chestreamapp">Blog</a></li>
 	                	<li><a href="https://angel.co/chestream">AngelList</a></li>
 	                	<li><a href="mailto:stomatrix@gmail.com?Subject=Press Queries">Press</a></li>
@@ -377,8 +377,9 @@
 	  	</div>
 	  </section>
 
-	  <p><a style="color:black" target="_blank" href="http://angelhack.com/hackcelerator/">Proudly incubated at AngelHacks</a></p>
+	  <p><a style="color:black" target="_blank" href="http://angelhack.com/hackcelerator/">Proudly incubated at AngelHack</a></p>
 	  <br>
+	  <img src="img/StraightOuttaSomewhere.jpg" width="200px">
 	  <p>Made with <span style="color: #f7403a">&hearts;</span> in New Delhi
 	  </p>
 	 
@@ -402,38 +403,102 @@
   	<script type="text/javascript">
   		$(document).ready(function() {
 
+  			Array.prototype.randomElement = function () {
+  			    return this[Math.floor(Math.random() * this.length)]
+  			}
+
   			Parse.initialize("M5tnZk2K6PdF82Ra8485bG2VQwPjpeZLeL96VLPj", "hW010xIHa9soZWywtondlJCy0k94KNzW4ns9TKX5");
 
-  		 	var data = Parse.Object.extend("Channels");
-  		 	var query = new Parse.Query(data);
+  		 	var channel_query = new Parse.Query(Parse.Object.extend("Channels"));
+  		 	channel_query.equalTo("active", true);
+  		 	var video_query = new Parse.Query(Parse.Object.extend("Videos"));
 
   		 	if (window.location.hash.length != 0){
   		 		channel_id = window.location.hash.slice(1);
+  		 		
+  		 		channel_query.get(channel_id, {
+  		 		  		 	success: function(object) {
+  		 		  		 	  	console.log(object.get("picture"));
+  		 		  				//$('#title').text(object.get("title"));
+  		 		  		 	    //$('#form_title').val(object.get("title"));
+  		 		  		 	    $('#video').attr('src', object.get("video"));
+  		 		  		 	    $('#story_title').text(object.get("name"));
+  		 		  		 	    $('#story_text').text(object.get("info"));
+  		 		  		 	    $('#story_img').attr('src', object.get("picture"));
+
+  		 		  		 	     	video_query.get(object.get("video_ids")[0], {
+  		 		  		 	     	  success: function(object) {
+  		 		  		 	     	  	console.log(object.get("url"));
+  		 		  		 	    		//$('#title').text(object.get("title"));
+  		 		  		 	     	    //$('#form_title').val(object.get("title"));
+  		 		  		 	     	    $('#video').attr('src', object.get("url"));
+  		 		  		 	     	    
+  		 		  		 	     	  },
+  		 		  		 	     	  error: function(object, error) {
+  		 		  		 	     	    // The object was not retrieved successfully.
+  		 		  		 	     	    // error is a Parse.Error with an error code and message.
+  		 		  		 	     	    console.log(error);
+  		 		  		 	     	  }
+  		 		  		 	     	});
+
+  		 		  		 	},
+  		 		  		 	error: function(object, error) {
+  		 		  		 	    // The object was not retrieved successfully.
+  		 		  		 	    // error is a Parse.Error with an error code and message.
+  		 		  		 	    console.log(error);
+  		 		  		 	}
+  		 		});
+
+
   		 	}
   		 	else{
-  		 		channel_id = "oBGyLNJd9L";
+  		 		
+  		 			channel_query.find({
+  		 			    success: function(results) {
+  		 			        var item = results.randomElement();
+  		 			        //console.log(item.get("video_ids")[0]);
+  		 			        //console.log(item.get("active"));
+  		 			        
+  		 			        $('#story_title').text(item.get("name"));
+  		 			        $('#story_text').text(item.get("info"));
+  		 			        $('#story_img').attr('src', item.get("picture"));
+
+  		 			         	video_query.get(item.get("video_ids")[0], {
+  		 			         	  success: function(object) {
+  		 			         	  	console.log(object.get("url"));
+  		 			        		//$('#title').text(object.get("title"));
+  		 			         	    //$('#form_title').val(object.get("title"));
+  		 			         	    $('#video').attr('src', object.get("url"));
+  		 			         	    
+  		 			         	  },
+  		 			         	  error: function(object, error) {
+  		 			         	    // The object was not retrieved successfully.
+  		 			         	    // error is a Parse.Error with an error code and message.
+  		 			         	    console.log(error);
+  		 			         	  }
+  		 			         	});
+
+
+  		 			    },
+  		 			    error: function() {
+  		 			        console.log(error);
+  		 			    }
+  		 			});
+
+
   		 	}
 
-  		 	query.get(channel_id, {
-  		 	  success: function(object) {
-  		 	  	console.log(object.get("picture"));
-  				//$('#title').text(object.get("title"));
-  		 	    //$('#form_title').val(object.get("title"));
-  		 	    $('#video').attr('src', object.get("video"));
-  		 	    $('#story_title').text(object.get("name"));
-  		 	    $('#story_text').text(object.get("info"));
-  		 	    $('#story_img').attr('src', object.get("picture"));
-  		 	  },
-  		 	  error: function(object, error) {
-  		 	    // The object was not retrieved successfully.
-  		 	    // error is a Parse.Error with an error code and message.
-  		 	    console.log(error);
-  		 	  }
-  		 	});
+  		 	
+
+  		 	
   		 	
   		});
 
   		$('#video').click(function(){this.paused?this.play():this.pause();});
+
+  		function query() {
+  		    return Math.floor(Math.random() * (max - min + 1)) + min;
+  		}
 
   	</script>
   	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.19.min.js"></script>
