@@ -42,480 +42,106 @@
 	<meta name="msapplication-square310x310logo" content="img/favicomatic/mstile-310x310.png" />
     <!-- CSS 
         ================================================== -->
-    <!-- Bootstrap 3-->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
-    <!-- Template Styles -->
-    <link href="css/style.css" rel="stylesheet" media="screen">
+    	<style>
+		html, body {
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  padding: 0;
+  margin: 0;
+}
 
-    <link rel="stylesheet" href="css/devices.min.css" type="text/css">
-    <style type="text/css">
-    	.screen{
-    		background: white;
-    	}
-    	.screen > .mobile_body > p {
-    		color: black;
-    	}
-    	#story_title{
-    		font-weight: bolder;
-    		font-size: 120%;
-    	}
-    	#story_text{
-    		text-align: left;
-    		padding-left: 5px;
-    	}
-    	#story_img{
-    		width: 100px;
-    		height: 100px;
-    		border-radius: 100px;
-    	}
-    	.mobile_header{
-    		background: black;
-    		color: white;
-    	}
-    	video{
-    		margin-top: -10px;
-    		width:100%;
-    	}
-    	
-    </style>
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+}
 
+.nav li {
+  list-style: none;
+  display: inline-block;
+}
+
+.nav .link {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 11px;
+  font-family: Sans-serif;
+  color: #333;
+  margin: 0 10px;
+}
+
+.blocks {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.blocks:nth-child(1) {
+  background: green;
+}
+.blocks:nth-child(2) {
+  background: blue;
+}
+.blocks:nth-child(3) {
+  background: pink;
+}
+.blocks:nth-child(4) {
+  background: yellow;
+}
+.blocks:nth-child(5) {
+  background: black;
+}	
+	</style>
       </head>
   <body>
-	  
-
-	  <!-- NAVBAR
-	      ================================================== 
-	  <nav class="navbar navbar-default" role="navigation">
-	  	  <div class="container">
-			  <div class="navbar-header">
-			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-			      <span class="sr-only">Toggle navigation</span>
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			    </button>
-			    
-			    
-			    <a class="navbar-brand" href="#">Chestream.com</a>
-			    
-			  </div>
-			  <div class="collapse navbar-collapse navbar-ex1-collapse">
-			    <ul class="nav navbar-nav">
-			      <li><a onclick="$('header').animatescroll({padding:71});">Start</a></li>
-			      <li><a onclick="$('.detail').animatescroll({padding:71});">Screens</a></li>
-			      <li><a onclick="$('.features').animatescroll({padding:71});">Features</a></li>
-			      <li><a onclick="$('.social').animatescroll({padding:71});">Social	</a></li>
-			    </ul>
-			  </div>
-		  </div>
-	  </nav>
-	-->
+	<nav class="nav">
+  <ul>
+    <li><a href="#bloco1" class="link">C</a></li>
+    <li><a href="#bloco2" class="link">H</a></li>
+    <li><a href="#bloco3" class="link">E</a></li>
+    <li><a href="#bloco4" class="link">S</a></li>
+    <li><a href="#bloco5" class="link">T</a></li>
+	  <li><a href="#bloco5" class="link">R</a></li>
+	  <li><a href="#bloco5" class="link">E</a></li>
+	  <li><a href="#bloco5" class="link">A</a></li>
+	  <li><a href="#bloco5" class="link">M</a></li>
+  </ul>
+</nav>
+<div class="blocks" id="bloco1"></div>
+<div class="blocks" id="bloco2"></div>
+<div class="blocks" id="bloco3"></div>
+<div class="blocks" id="bloco4"></div>
+<div class="blocks" id="bloco5"></div>
+	  <div class="blocks" id="bloco6"></div>
+	  <div class="blocks" id="bloco7"></div>
+	  <div class="blocks" id="bloco8"></div>
+	  <div class="blocks" id="bloco9"></div>
 	  
 	  
-	   <!-- HEADER
-	   ================================================== -->	  
-	    <header>
-	  	 <div class="container">
-	  		 <div class="row">
-	  			 <div class="col-md-12">
-	  				  <h1 class="sexyText">⍟ Chestream ⍟</h1>
-	  				  <h3 class="sexyText2">The Pulse of the Internet</h1>
-
-	  				  		<br>
-	  				    	<div class="marvel-device nexus5">
-	  				    	    <div class="top-bar"></div>
-	  				    	    <div class="sleep"></div>
-	  				    	    <div class="volume"></div>
-	  				    	    <div class="camera"></div>
-	  				    	    <div class="screen">
-	  				    	        <!-- Content goes here -->
-	  				    	        <p class="mobile_header">Chestream</p>
-	  				    	        <video id="video" src="video.webm" autoplay loop>
-	  				  			</video>
-	  				  			<div class="mobile_body">
-	  				  				<img id="story_img">
-	  				  				<p id="story_title" class="bold">title</p>
-	  				  				<hr>
-	  				  				<p id="story_text" class="normal">text</p>
-	  				  			</div>
-	  				    	    </div>
-	  				    	</div>
-	  			</div>	  
-	  		</div>    
-	  	</div>
-	   </header>
-
-	  <!-- PURCHASE
-	      ================================================== -->
-	  <section class="purchase">
-		  <div class="container">
-			  <div class="row">
-				  <div class="col-md-offset-2 col-md-8">
-				  	<br><br>
-					<h1>Come, be part of a revolution.</h1>
-					<p class="lead">Download from Play Store today!! (Coming soon for iOS)</p>
-					<br>
-					<a href="http://play.google.com/store/apps/details?id=com.chestream" target="_blank">
-						<button type="button" class="app-store"></button>	
-					</a>
-				  </div>
-			  </div>
-		  </div>
-	  </section>
-
-	  <!-- PAYOFF 
-	      ================================================== -->
-	  <section class="payoff">
-		<div class="container">
-			  <div class="row">
-				  <div class="col-md-12">
-
-					  <div id="carousel-example-generic-20" class="carousel slide">
-										
-					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-					    <div class="item active">
-					      	<div class="row">
-					      		<h1>"It's like a TV in your pocket. Amazing app!"</h1><br>
-					      		<a target="_blank" href="https://www.facebook.com/kritika.singh.9655806">
-					      		  <img width="70px" style="border:3px solid" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/p100x100/11796326_1605516019698086_5515151796781590205_n.jpg?oh=b67a076cfcfc9bb8a35d8b9232efa9c3&oe=564460E6&__gda__=1446777389_7ff5814a3d07fd22bb3b0091ae01009c" alt="..." class="img-circle">
-					      		  <p>Kritika Singh</p>
-					      	    </a>
-					      	</div>
-					    </div>
-					    <div class="item">
-					    	<div class="row">
-					    		<h1>"I find it very useful to engage with my 100,000+ fans on daily basis."</h1><br>
-					    		<a target="_blank" href="https://www.facebook.com/BBkiVines?fref=ts">
-					    		   <img width="70px" style="border:3px solid" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c22.0.160.160/p160x160/11218871_552466524895968_6251377989366115459_n.jpg?oh=d0769d83b255d33d057eade66ae5b844&oe=563B216D&__gda__=1450885757_d6a77b2f20de667ca383dac874fb0f77" alt="..." class="img-circle">
-					    		   <p>Bhuvan Bam (Celebrity)</p>
-					      		</a>
-					    	</div>
-						</div>
-					    <div class="item">
-					    	<div class="row">
-					    		<h1>"Loving it.This is the becoming of a next gen mobile first crowdsourced media company in the making."</h1><br>
-					    		<a target="_blank" href="https://www.facebook.com/profile.php?id=100001942147034">
-					    		  <img width="70px" style="border:3px solid" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpt1/v/t1.0-1/p160x160/11836767_868969876511076_5438661928486016073_n.jpg?oh=c9291866d7a25f01aa5d9b81aaa5d4ad&oe=563D6F8D&__gda__=1447079920_592287ee7893a2cc2de524b299c6235a" alt="..." class="img-circle">
-					      		  <p>Sahiba Jai Karan Sethi</p>
-					      		</a>
-					    	</div>
-						</div>
-						<div class="item">
-					    	<div class="row">
-					    		<h1>"The recent pivot around channels is very interesting!! Looking forward to more awesomeness :D"</h1><br>
-					    		<a target="_blank" href="https://www.facebook.com/championswimmer">
-					    		  <img width="70px" style="border:3px solid" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/p160x160/393736_314822951949839_851215039_n.jpg?oh=f6d694df56e8b571985c73deb7c46953&oe=5678ACD6&__gda__=1447480410_7c822624a71416f5ae8ce030b55cb208" alt="..." class="img-circle">
-					      		<p>Arnav Gupta</p>
-					      	    </a>
-					    	</div>
-						</div>
-						
-					  </div>
-					
-					  
-					</div>
-
-				  </div>
-
-			  </div>
-		  </div>	  
-	  </section>
-
-	 <!-- DETAILS 
-	      ================================================== -->
-	  <section class="detail">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div id="carousel-example-generic-2" class="carousel slide">
-										
-					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-					    <div class="item active">
-					      	<div class="row">
-					      		<div class="col-sm-12 col-md-offset-1 col-md-6">
-					      			<h2>Chestream is the one place to find out what's happening in the world at the moment through byte sized videos</h2>
-					      			<p>Curated across the wilderness of the world wide web, just for you.</p>
-					      		</div>
-					      		<div class="col-sm-12 col-md-5">
-					      			<div class="app-screenshot">
-					      				<img src="img/screenshots/app-1.png" class="img-responsive" alt="App Screen 1">
-					      			</div>
-					      		</div>
-					      	</div>
-					    </div>
-					    <div class="item">
-					    	<div class="row">
-					    		<div class="col-sm-12 col-md-offset-1 col-md-6">
-					    			<h1>We curate videos around a topic into channels.</h1>
-					    			<p>These videos are around events, some trending news story, or a video that is going viral. These channels stay live as long as they are relevant in the global context.</p>
-					    		</div>
-					    		<div class="col-sm-12 col-md-5">
-					    			<div class="app-screenshot">
-					    				<img src="img/screenshots/app-3.png" class="img-responsive" alt="App Screen 2">
-					    			</div>
-					    		</div>
-					    	</div>
-						</div>
-					    <div class="item">
-					      <div class="row">
-					      	<div class="col-sm-12 col-md-offset-1 col-md-6">
-					      		<h1>Discover amazing content around you.</h1>
-					      		<p>We partner with emerging celebrities, and leading video production houses to bring the best to your pocket.</p>
-					      	</div>
-					      	<div class="col-sm-12 col-md-5">
-					      		<div class="app-screenshot">
-					      			<img src="img/screenshots/app-4.png" class="img-responsive" alt="App Screen 3">
-					      		</div>
-					      	</div>
-					      </div>
-					    </div>
-					    <div class="item">
-					      <div class="row">
-					      	<div class="col-sm-12 col-md-offset-1 col-md-6">
-					      		<h1>Engage with your audience like never before.</h1>
-					      		<p>We provide breakthrough analytics to our channel partners, and help them launch amazing campaigns. </p>
-					      	</div>
-					      	<div class="col-sm-12 col-md-5">
-					      		<div class="app-screenshot">
-					      			<img src="img/screenshots/app-2.png" class="img-responsive" alt="App Screen 3">
-					      		</div>
-					      	</div>
-					      </div>
-					    </div>
-					  </div>
-					
-					  <!-- Indicators -->
-					  <ol class="carousel-indicators">
-					    <li data-target="#carousel-example-generic-2" data-slide-to="0" class="active"></li>
-					    <li data-target="#carousel-example-generic-2" data-slide-to="1"></li>
-					    <li data-target="#carousel-example-generic-2" data-slide-to="2"></li>
-					  </ol>		
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 	  
 	  
-	
-	  
-	  <!--
-	  <section class="features">
-		  <div class="container">
-			  <div class="row">
-				
-				  <div class="col-md-4">
-					  <div class="circle"><i class="icon-bookmark"></i></div>
-					  <h2>Quick &amp; Easy Setup</h2>
-					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-				  </div>
-				
-				  <div class="col-md-4">
-					  <div class="circle"><i class="icon-keypad"></i></div>
-					  <h2>Parallax Scrolling</h2>
-					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-				  </div>
-				 
-				  <div class="col-md-4">
-					  <div class="circle"><i class="icon-like"></i></div>
-					  <h2>Responsive Design</h2>
-					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-				  </div>
-				  
-			  </div>
-		  </div>
-	  </section>
-	-->
-	  
-	
-	 <!-- SOCIAL
-	     ================================================== -->
-	  <section class="social">
-	  	<div class="container">
-	  		  <div class="row">
-	  			  <div class="col-md-12">
-	  			  	<h2>Connect with us</h2>
-	  			   	<a class="icon-facebook" target="_blank" href="http://fb.com/chestreamapp"></a>
-	  			   	<a class="icon-twitter" target="_blank" href="http://twitter.com/chestreamapp"></a>
-	  			   	<a class="icon-youtube" target="_blank" href="https://www.youtube.com/channel/UCjEPO9dYmBzKGKIBm1LG0SQ/videos"></a>
-	  			   	<a class="icon-rss" target="_blank" href="https://medium.com/@chestreamapp"></a>
-	  			   </div>
-	  		  </div>
-	  	  </div>	  
-	  </section>
-	  
-	
-	 <!-- GET IT 
-	     ================================================== -->
-	  <section class="get-it">
-	  	<div class="container">
-	  		<div class="row">
-	  			<div class="col-md-12">
-	  				<img width="70px" src="img/logo.png">
-	  				<h1>Available now on the Play Store</h1>
-	  				<p class="lead">Download Today!!</p>
-	  				<a href="http://play.google.com/store/apps/details?id=com.chestream" target="_blank">
-						<button type="button" class="app-store"></button>	
-					</a>
-	  			</div>
-	  			<div class="col-md-12">
-	  				<hr />
-		  			<ul>
-	                	<li><a href="mailto:stomatrix@gmail.com?Subject=Hello Chestream!!">Contact</a></li>
-	                	<li><a href="https://medium.com/@chestreamapp">Blog</a></li>
-	                	<li><a href="https://angel.co/chestream">AngelList</a></li>
-	                	<li><a href="mailto:stomatrix@gmail.com?Subject=Press Queries">Press</a></li>
-                	</ul>
-                	<hr/>
-	  			</div>
-	  		</div>
-	  	</div>
-	  </section>
-
-	  <p><a style="color:black" target="_blank" href="http://angelhack.com/hackcelerator/">Proudly incubated at AngelHack</a></p>
-	  <br>
-	  <img src="img/StraightOuttaSomewhere.jpg" width="200px">
-	  <p>Made with <span style="color: #f7403a">&hearts;</span> in New Delhi
-	  </p>
-	 
-	 <!-- JAVASCRIPT
-	     ================================================== -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/animatescroll.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/retina.min.js"></script>
-
-  	<script type="text/javascript">
-  		windowWidth = window.innerWidth;
-
-  		if (screen.width <= 480 || windowWidth <= 480) {
-  	    	window.location = "http://play.google.com/store/apps/details?id=com.chestream";
-  		}
-  	</script>
-
-  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
-  	<script type="text/javascript">
-  		$(document).ready(function() {
-
-  			Array.prototype.randomElement = function () {
-  			    return this[Math.floor(Math.random() * this.length)]
-  			}
-
-  			Parse.initialize("M5tnZk2K6PdF82Ra8485bG2VQwPjpeZLeL96VLPj", "hW010xIHa9soZWywtondlJCy0k94KNzW4ns9TKX5");
-
-  		 	var channel_query = new Parse.Query(Parse.Object.extend("Channels"));
-  		 	channel_query.equalTo("active", true);
-  		 	var video_query = new Parse.Query(Parse.Object.extend("Videos"));
-
-  		 	if (window.location.hash.length != 0){
-  		 		channel_id = window.location.hash.slice(1);
-  		 		
-  		 		channel_query.get(channel_id, {
-  		 		  		 	success: function(object) {
-  		 		  		 	  	console.log(object.get("picture"));
-  		 		  				//$('#title').text(object.get("title"));
-  		 		  		 	    //$('#form_title').val(object.get("title"));
-  		 		  		 	    $('#video').attr('src', object.get("video"));
-  		 		  		 	    $('#story_title').text(object.get("name"));
-  		 		  		 	    $('#story_text').text(object.get("info"));
-  		 		  		 	    $('#story_img').attr('src', object.get("picture"));
-
-  		 		  		 	     	video_query.get(object.get("video_ids")[0], {
-  		 		  		 	     	  success: function(object) {
-  		 		  		 	     	  	console.log(object.get("url"));
-  		 		  		 	    		//$('#title').text(object.get("title"));
-  		 		  		 	     	    //$('#form_title').val(object.get("title"));
-  		 		  		 	     	    $('#video').attr('src', object.get("url"));
-  		 		  		 	     	    
-  		 		  		 	     	  },
-  		 		  		 	     	  error: function(object, error) {
-  		 		  		 	     	    // The object was not retrieved successfully.
-  		 		  		 	     	    // error is a Parse.Error with an error code and message.
-  		 		  		 	     	    console.log(error);
-  		 		  		 	     	  }
-  		 		  		 	     	});
-
-  		 		  		 	},
-  		 		  		 	error: function(object, error) {
-  		 		  		 	    // The object was not retrieved successfully.
-  		 		  		 	    // error is a Parse.Error with an error code and message.
-  		 		  		 	    console.log(error);
-  		 		  		 	}
-  		 		});
-
-
-  		 	}
-  		 	else{
-  		 		
-  		 			channel_query.find({
-  		 			    success: function(results) {
-  		 			        var item = results.randomElement();
-  		 			        //console.log(item.get("video_ids")[0]);
-  		 			        //console.log(item.get("active"));
-  		 			        
-  		 			        $('#story_title').text(item.get("name"));
-  		 			        $('#story_text').text(item.get("info"));
-  		 			        $('#story_img').attr('src', item.get("picture"));
-
-  		 			         	video_query.get(item.get("video_ids")[0], {
-  		 			         	  success: function(object) {
-  		 			         	  	console.log(object.get("url"));
-  		 			        		//$('#title').text(object.get("title"));
-  		 			         	    //$('#form_title').val(object.get("title"));
-  		 			         	    $('#video').attr('src', object.get("url"));
-  		 			         	    
-  		 			         	  },
-  		 			         	  error: function(object, error) {
-  		 			         	    // The object was not retrieved successfully.
-  		 			         	    // error is a Parse.Error with an error code and message.
-  		 			         	    console.log(error);
-  		 			         	  }
-  		 			         	});
-
-
-  		 			    },
-  		 			    error: function() {
-  		 			        console.log(error);
-  		 			    }
-  		 			});
-
-
-  		 	}
-
-  		 	
-
-  		 	
-  		 	
-  		});
-
-  		$('#video').click(function(){this.paused?this.play():this.pause();});
-
-  		function query() {
-  		    return Math.floor(Math.random() * (max - min + 1)) + min;
-  		}
-
-  	</script>
-  	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.19.min.js"></script>
+  </body>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
 	<script type="text/javascript">
-		$(document).ready(function() {
-			window.location.replace("http://newsmeme.in");			
-		});
-  		
+
+      		$(document).ready(function() {
+
+  $('.link').on('click', function(e){
+    
+    var hash = $(this).attr('href');
+     $('html,body').animate({
+       scrollTop: $(hash).offset().top
+     }, 800);
+    
+    return false;
+  });
+});
+
 	</script>
-  	<script>
-  	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  	  ga('create', 'UA-58451032-2', 'auto');
-  	  ga('send', 'pageview');
-  	</script>
 
 </html>
