@@ -1,0 +1,4 @@
+*.pyc
+apex/temp/*
+apex/temp_buffer/*
+
