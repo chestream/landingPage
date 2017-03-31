@@ -49,6 +49,8 @@ def slidebake(data=temp_data):
     os.system('rm %s/temp_buffer/*'%(DIR_PATH))
     font_loc = ''
 
+    #TODO: make it so that image with url can also be downloaded.
+    
     for slide in data:
         image_url = "%s/temp/%s"%(DIR_PATH,slide['image'])
         title = slide['title']
