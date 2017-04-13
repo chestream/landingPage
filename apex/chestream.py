@@ -50,7 +50,7 @@ def slidebake(data=temp_data):
     font_loc = ''
 
     #TODO: make it so that image with url can also be downloaded.
-    
+
     for slide in data:
         image_url = "%s/temp/%s"%(DIR_PATH,slide['image'])
         title = slide['title']
@@ -64,6 +64,9 @@ def slidebake(data=temp_data):
         #convert the slide to a vertical slide
         os.system("convert %s/temp_buffer/slide_%s.png \( -clone 0 -blur 0x15 -resize %s\! \) \( -clone 0 -resize %s \) -delete 0 \
             -gravity center -compose over -composite %s/temp_buffer/fat_vertical_slide_%s.png"%(DIR_PATH,counter,V_DIMENSION,V_DIMENSION,DIR_PATH,counter))
+
+        #os.system(" convert %s/temp_buffer/slide_foo.png -clone 0 -blur 0x15 -resize edited_png.png")
+
 
         #compressing the slides
         os.system('''
@@ -116,7 +119,47 @@ def slidebake(data=temp_data):
     #NOW we need to add the audio overlay to our video
 
 
+def kenburns():
+    os.system('rm %s/temp_buffer/kenburn/*'%(DIR_PATH))
+    os.system('mkdir %s/temp_buffer/kenburn'%(DIR_PATH))
+
+    steps=100
+    # Final x offset from top left
+    finalx=252
+    finalx = 504
+    # Final y offset from top left
+    finaly=146
+    finaly = 292
+    # Initial & Final width
+    finalw=504
+    initw=1008
+    # Initial & Final height
+    finalh=292
+    inith=584
+
+    for i in range(steps):
+        x=finalx*i/steps
+        y=finaly*i/steps
+        x = finalx/2
+        y = finaly/2
+        w=initw-(i*(initw-finalw)/steps)
+        h=inith-(i*(inith-finalh)/steps)
+        # w = 504
+        # h = 282
+        # x = 252+i
+        # y = 146-i
+        percent = 150
+
+        os.system('convert %s/temp/1.jpg -gravity Center -crop %s%%x+%s+%s -resize %sx%s %s/temp_buffer/kenburn/frame_%s.png'%(DIR_PATH,
+                    percent,x,y,504,292,DIR_PATH,i))
+        #os.system('convert %s/newsmeme_experiments/image.png -crop %sx%s+%s+%s -resize %sx%s %s/newsmeme_experiments/ken_frames/frame_%s.png'%(DIR_PATH,
+        #            w,h,x,y,504,292,DIR_PATH,i))
+
+    os.system('ffmpeg -i %s/temp_buffer/kenburn/frame_%%01d.png %s/temp_buffer/kenburn/00.gif'%(DIR_PATH,DIR_PATH))
+
+
 if __name__ == '__main__':
     start_time = time.time()
     slidebake()
+    #kenburns()
     print("--- %s seconds ---" % (time.time() - start_time))
