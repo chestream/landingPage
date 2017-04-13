@@ -1,0 +1,15 @@
+body{
+  padding-top:70px;
+}
+footer{
+  position: fixed;
+  bottom: 2px;
+  width: 100%;
+  border: 1px solid black;
+}
+#c{
+  margin-left: 100px;
+  margin-top: 5px;
+  background-color:ghostwhite;
+  border: 2px black solid;
+}
