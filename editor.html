@@ -32,6 +32,7 @@
         position: fixed;
         bottom: 5px;
         width: 100%;
+        border: 1px solid black;
       }
     </style>
 
@@ -62,11 +63,12 @@
         <div id="navbar" class="navbar-collapse collapse">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" target="_blank">+</a></li>
-            <li><a href="#" target="_blank">+</a></li>
-            <li><a href="#" target="_blank">+</a></li>
-            <li><a href="#" target="_blank">+</a></li>
-            <!-- <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li> -->
+            <li class="active"><a href="#" target="_blank">
+              <i class="glyphicon glyphicon-send"></i>
+                Submit
+            </a></li>
+
+
           </ul>
         </div>
       </div>
@@ -78,14 +80,22 @@
       <div class="jumbotron">
 
         <button class="btn btn-primary" onclick="wavesurfer.playPause()">
-            <i class="glyphicon glyphicon-play"></i>
-              Play/Pause
+            <i class="glyphicon glyphicon-upload"></i>
+              Upload
+        </button>
+
+
+        <button class="btn btn-primary" onclick="wavesurfer.playPause()">
+            <i class="glyphicon glyphicon-play"></i>/<i class="glyphicon glyphicon-pause"></i>
         </button>
 
         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             <i class="glyphicon glyphicon-plus"></i>
               Slide
         </button>
+
+
+
       </div>
 
       <!-- Modal -->
@@ -96,6 +106,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Add Slide</h4>
                   </div>
+
                   <div class="modal-body">
                         <form class="form-inline">
                               <div class="form-group">
@@ -109,8 +120,7 @@
                         </form>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" onclick="wavesurfer.playPause()" >Save changes</button>
                   </div>
                 </div>
               </div>
