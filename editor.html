@@ -28,6 +28,11 @@
       span{
         cursor: pointer;
       }
+      footer{
+        position: fixed;
+        bottom: 5px;
+        width: 100%;
+      }
     </style>
 
     <link rel="stylesheet" href="hint.min.css">
@@ -60,7 +65,7 @@
             <li><a href="#" target="_blank">+</a></li>
             <li><a href="#" target="_blank">+</a></li>
             <li><a href="#" target="_blank">+</a></li>
-            <li><a href="#" target="_blank">Contact</a></li>
+            <li><a href="#" target="_blank">+</a></li>
             <!-- <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li> -->
           </ul>
         </div>
@@ -71,11 +76,45 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h2>Chestream Editor View</h2>
 
-        <p>+</p>
+        <button class="btn btn-primary" onclick="wavesurfer.playPause()">
+            <i class="glyphicon glyphicon-play"></i>
+              Play/Pause
+        </button>
 
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            <i class="glyphicon glyphicon-plus"></i>
+              Slide
+        </button>
       </div>
+
+      <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Slide</h4>
+                  </div>
+                  <div class="modal-body">
+                        <form class="form-inline">
+                              <div class="form-group">
+                                    <input type="text" class="form-control" id="exampleInputEmail3" placeholder="label">
+                              </div>
+
+                              <div class="form-group">
+                                  <input type="text" class="form-control" id="exampleInputPassword3" placeholder="image url">
+                              </div>
+
+                        </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
     </div> <!-- /container -->
 
@@ -98,10 +137,11 @@
     <script>
 
         var wavesurfer = WaveSurfer.create({
-              container: '#waveform'
+              container: '#waveform',
+              barWidth: 3
         });
 
-        wavesurfer.load('https://archive.org/download/testmp3testfile/mpthreetest.mp3');
+        wavesurfer.load('https://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3');
 
     </script>
 
