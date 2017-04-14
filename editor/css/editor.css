@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
 body{
   padding-top:70px;
+  font-family: 'Roboto', sans-serif;
+
 }
 footer{
   position: fixed;
@@ -10,6 +14,9 @@ footer{
 #c{
   margin-left: 100px;
   margin-top: 5px;
-  background-color:ghostwhite;
+  //background-color:violet;
   border: 2px black solid;
+}
+#c2{
+  display: none;
 }
